@@ -59,10 +59,7 @@ module.exports = class JadeAngularJsCompiler
     copyfolder = pair.path.slice 0, 2
     copyfolder.push jsFileName
 
-    virtualPathGen = ->
-      if modulePath.length is 2
-        return '/' + modulePath.join('/')
-      else return '/' + [modulePath[0], modulePath[2]].join('/')
+    virtualPathGen = -> '/' + pair.path.slice(1).join('/')
 
     result =
       moduleName: moduleName
